@@ -1,4 +1,6 @@
 using Messaging;
+using Microsoft.EntityFrameworkCore;     //  EF Core
+using OrderApi.Data;                     // OrderDbContext
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//  DATA LAYER: DbContext 
+builder.Services.AddDbContext<OrderDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("OrderDb")));
 
 // RabbitMQ 
 // Load .env file
