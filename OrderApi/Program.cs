@@ -11,7 +11,7 @@ builder.Services.AddSwaggerGen();
 
 //  DATA LAYER: DbContext 
 builder.Services.AddDbContext<OrderDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("OrderDb")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("OrderDb")));
 
 // RabbitMQ 
 // Load .env file
@@ -31,6 +31,22 @@ builder.Services.AddSingleton<IMessageProducer, RabbitMQProducer>();
 builder.Services.AddHostedService<OrderApi.Consumers.OrderUpdateConsumer>();
 
 var app = builder.Build();
+
+// Ensure database is created and migrations are applied
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<OrderDbContext>();
+        context.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred while migrating the database.");
+    }
+}
 
 // Swagger UI
 if (app.Environment.IsDevelopment())

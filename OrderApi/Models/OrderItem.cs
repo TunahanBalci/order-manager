@@ -8,7 +8,7 @@ namespace OrderApi.Models
 {
     public class OrderItem
     {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     [Required]
     [MaxLength(100)]
@@ -18,7 +18,7 @@ namespace OrderApi.Models
 
     public decimal UnitPrice { get; set; }
 
-    public int OrderId { get; set; }
+    public Guid OrderId { get; set; }
     public Order Order { get; set; } = null!;
 
 

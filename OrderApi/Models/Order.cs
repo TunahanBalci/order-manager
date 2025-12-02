@@ -8,7 +8,7 @@ namespace OrderApi.Models
 {
    public class Order
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     [Required]
     [MaxLength(100)]
