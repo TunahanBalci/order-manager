@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ImVkdv/YYCBhsn5fI3duaiP9D6Q4dZS0ga7TRpEr08WB5+fFnqS19JBzt+TnlX9hqyJapXsJoZ7r2oBqU0KVkQ==",
+  "dgSpecHash": "NplBJQ8M5pq0d/tdvmKF3gonMOE0FgwvL2wDS4OgIH+OfBAkkeaP1VKppnVbDMYpVq424hzvkN96OaIqOhXYeA==",
   "success": true,
-  "projectFilePath": "/home/tuna/projects/seng315/Shared/Shared.csproj",
+  "projectFilePath": "/home/tuna/projects/order-manager/Shared/Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/tuna/projects/seng315/Shared/Shared.csproj",
+      "projectUniqueName": "/home/tuna/projects/order-manager/Shared/Shared.csproj",
       "projectName": "Shared",
-      "projectPath": "/home/tuna/projects/seng315/Shared/Shared.csproj",
+      "projectPath": "/home/tuna/projects/order-manager/Shared/Shared.csproj",
       "packagesPath": "/home/tuna/.nuget/packages/",
-      "outputPath": "/home/tuna/projects/seng315/Shared/obj/",
+      "outputPath": "/home/tuna/projects/order-manager/Shared/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/tuna/.nuget/NuGet/NuGet.Config"

@@ -1,5 +1,7 @@
+using InventoryService.Data;
+using InventoryService.Services;
 using Messaging;
-using InventoryService.Consumers;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,13 +10,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// RabbitMQ Configuration
-// Load .env file
+// Data Layer (InMemory for simplicity in this homework)
+builder.Services.AddDbContext<InventoryDbContext>(options =>
+    options.UseInMemoryDatabase("InventoryDb"));
+
+// Domain Services
+builder.Services.AddScoped<InventoryService.Services.InventoryService>();
+
+// RabbitMQ
 var root = Directory.GetCurrentDirectory();
 var dotenv = Path.Combine(root, "..", ".env");
 DotNetEnv.Env.Load(dotenv);
 
-// RabbitMQ Configuration
 var rabbitConfig = new RabbitMQConfiguration
 {
     HostName = Environment.GetEnvironmentVariable("RABBITMQ_HOST") ?? "localhost",
@@ -22,11 +29,11 @@ var rabbitConfig = new RabbitMQConfiguration
     Password = Environment.GetEnvironmentVariable("RABBITMQ_PASSWORD") ?? "guest"
 };
 builder.Services.AddSingleton(rabbitConfig);
+builder.Services.AddSingleton<IMessageProducer, RabbitMQProducer>();
 
-// Register Consumers
-builder.Services.AddHostedService<InventoryAllocateConsumer>();
-builder.Services.AddHostedService<InventoryCommitConsumer>();
-builder.Services.AddHostedService<InventoryReleaseConsumer>();
+// Consumers
+builder.Services.AddHostedService<InventoryService.Consumers.OrderCreatedConsumer>();
+builder.Services.AddHostedService<InventoryService.Consumers.PaymentProcessedConsumer>();
 
 var app = builder.Build();
 
@@ -43,29 +50,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
-
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

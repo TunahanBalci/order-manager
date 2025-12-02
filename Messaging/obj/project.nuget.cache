@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p6AmQMie54oMZ2EEOyS0TXlCmwqQXgdjEOxiC7Yf8PxtWtL5EryTzoqWfRoeNSH4j6EYtVf3gu54XUKLGVVyUg==",
+  "dgSpecHash": "VRF9/ljXYT3Ct98ewqFrtNi5pv1YL7QnO30iVLOdwmM+cM1hr9hAQDKQGHhfqkyRb55MbpQEk8ohicI0lWVHWw==",
   "success": true,
-  "projectFilePath": "/home/tuna/projects/seng315/Messaging/Messaging.csproj",
+  "projectFilePath": "/home/tuna/projects/order-manager/Messaging/Messaging.csproj",
   "expectedPackageFiles": [
     "/home/tuna/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "/home/tuna/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

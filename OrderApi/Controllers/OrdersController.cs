@@ -34,14 +34,16 @@ public class OrdersController : ControllerBase
         {
             Id = Guid.NewGuid(),
             CustomerName = orderDto.CustomerName,
+            ShippingAddress = orderDto.ShippingAddress,
             Status = OrderStatus.Pending,
-            TotalPrice = orderDto.TotalAmount,
+            TotalAmount = orderDto.TotalAmount,
             Items = orderDto.Items?.Select(i => new OrderItem
             {
                 Id = Guid.NewGuid(),
+                ProductId = i.ProductId,
                 ProductName = i.ProductName,
                 Quantity = i.Quantity,
-                Price = i.Price
+                UnitPrice = i.UnitPrice
             }).ToList() ?? new List<OrderItem>()
         };
 
@@ -54,9 +56,10 @@ public class OrdersController : ControllerBase
         {
             OrderId = order.Id,
             CustomerName = order.CustomerName,
-            Amount = order.TotalPrice,
+            Amount = order.TotalAmount,
             CardNumber = orderDto.CardNumber,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            Items = orderDto.Items ?? new List<OrderItemDto>()
         };
 
         await _producer.SendMessageAsync(orderEvent, "order.created", "order");

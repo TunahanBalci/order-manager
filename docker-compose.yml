@@ -3,7 +3,7 @@ services:
     image: postgres:16-alpine
     container_name: order-postgres
     ports:
-      - "5432:5432"
+      - "5123:5432"
     environment:
       POSTGRES_DB: OrderDb
       POSTGRES_USER: postgres

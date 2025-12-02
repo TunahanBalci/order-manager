@@ -28,7 +28,8 @@ public class PaymentProcessConsumer : RabbitMQConsumer<OrderCreatedEvent>
             OrderId = orderEvent.OrderId,
             IsSuccess = isSuccess,
             Reason = isSuccess ? "Authorized" : "Insufficient Funds",
-            Timestamp = DateTime.UtcNow
+            Timestamp = DateTime.UtcNow,
+            Items = orderEvent.Items
         };
 
         var routingKey = isSuccess ? "payment.success" : "payment.failed";
