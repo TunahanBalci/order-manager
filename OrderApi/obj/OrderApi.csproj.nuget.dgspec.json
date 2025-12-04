@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/tuna/projects/order-manager/OrderApi/OrderApi.csproj": {}
+    "/home/tuna/order-manager/OrderApi/OrderApi.csproj": {}
   },
   "projects": {
-    "/home/tuna/projects/order-manager/Messaging/Messaging.csproj": {
+    "/home/tuna/order-manager/Messaging/Messaging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tuna/projects/order-manager/Messaging/Messaging.csproj",
+        "projectUniqueName": "/home/tuna/order-manager/Messaging/Messaging.csproj",
         "projectName": "Messaging",
-        "projectPath": "/home/tuna/projects/order-manager/Messaging/Messaging.csproj",
+        "projectPath": "/home/tuna/order-manager/Messaging/Messaging.csproj",
         "packagesPath": "/home/tuna/.nuget/packages/",
-        "outputPath": "/home/tuna/projects/order-manager/Messaging/obj/",
+        "outputPath": "/home/tuna/order-manager/Messaging/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/tuna/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/tuna/projects/order-manager/Shared/Shared.csproj": {
-                "projectPath": "/home/tuna/projects/order-manager/Shared/Shared.csproj"
+              "/home/tuna/order-manager/Shared/Shared.csproj": {
+                "projectPath": "/home/tuna/order-manager/Shared/Shared.csproj"
               }
             }
           }
@@ -71,14 +71,14 @@
         }
       }
     },
-    "/home/tuna/projects/order-manager/OrderApi/OrderApi.csproj": {
+    "/home/tuna/order-manager/OrderApi/OrderApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tuna/projects/order-manager/OrderApi/OrderApi.csproj",
+        "projectUniqueName": "/home/tuna/order-manager/OrderApi/OrderApi.csproj",
         "projectName": "OrderApi",
-        "projectPath": "/home/tuna/projects/order-manager/OrderApi/OrderApi.csproj",
+        "projectPath": "/home/tuna/order-manager/OrderApi/OrderApi.csproj",
         "packagesPath": "/home/tuna/.nuget/packages/",
-        "outputPath": "/home/tuna/projects/order-manager/OrderApi/obj/",
+        "outputPath": "/home/tuna/order-manager/OrderApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/tuna/.nuget/NuGet/NuGet.Config"
@@ -93,11 +93,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/tuna/projects/order-manager/Messaging/Messaging.csproj": {
-                "projectPath": "/home/tuna/projects/order-manager/Messaging/Messaging.csproj"
+              "/home/tuna/order-manager/Messaging/Messaging.csproj": {
+                "projectPath": "/home/tuna/order-manager/Messaging/Messaging.csproj"
               },
-              "/home/tuna/projects/order-manager/Shared/Shared.csproj": {
-                "projectPath": "/home/tuna/projects/order-manager/Shared/Shared.csproj"
+              "/home/tuna/order-manager/Shared/Shared.csproj": {
+                "projectPath": "/home/tuna/order-manager/Shared/Shared.csproj"
               }
             }
           }
@@ -166,14 +166,14 @@
         }
       }
     },
-    "/home/tuna/projects/order-manager/Shared/Shared.csproj": {
+    "/home/tuna/order-manager/Shared/Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tuna/projects/order-manager/Shared/Shared.csproj",
+        "projectUniqueName": "/home/tuna/order-manager/Shared/Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "/home/tuna/projects/order-manager/Shared/Shared.csproj",
+        "projectPath": "/home/tuna/order-manager/Shared/Shared.csproj",
         "packagesPath": "/home/tuna/.nuget/packages/",
-        "outputPath": "/home/tuna/projects/order-manager/Shared/obj/",
+        "outputPath": "/home/tuna/order-manager/Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/tuna/.nuget/NuGet/NuGet.Config"
