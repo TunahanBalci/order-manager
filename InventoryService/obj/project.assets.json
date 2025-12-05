@@ -7171,11 +7171,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/tuna/order-manager/InventoryService/InventoryService.csproj",
+      "projectUniqueName": "/home/tuna/projects/order-manager/InventoryService/InventoryService.csproj",
       "projectName": "InventoryService",
-      "projectPath": "/home/tuna/order-manager/InventoryService/InventoryService.csproj",
+      "projectPath": "/home/tuna/projects/order-manager/InventoryService/InventoryService.csproj",
       "packagesPath": "/home/tuna/.nuget/packages/",
-      "outputPath": "/home/tuna/order-manager/InventoryService/obj/",
+      "outputPath": "/home/tuna/projects/order-manager/InventoryService/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/tuna/.nuget/NuGet/NuGet.Config"
@@ -7190,11 +7190,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/tuna/order-manager/Messaging/Messaging.csproj": {
-              "projectPath": "/home/tuna/order-manager/Messaging/Messaging.csproj"
+            "/home/tuna/projects/order-manager/Messaging/Messaging.csproj": {
+              "projectPath": "/home/tuna/projects/order-manager/Messaging/Messaging.csproj"
             },
-            "/home/tuna/order-manager/Shared/Shared.csproj": {
-              "projectPath": "/home/tuna/order-manager/Shared/Shared.csproj"
+            "/home/tuna/projects/order-manager/Shared/Shared.csproj": {
+              "projectPath": "/home/tuna/projects/order-manager/Shared/Shared.csproj"
             }
           }
         }

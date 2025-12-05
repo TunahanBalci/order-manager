@@ -1,15 +1,16 @@
 services:
   postgres:
-    image: postgres:16-alpine
+    image: postgres:18-alpine
     container_name: order-postgres
     ports:
-      - "5123:5432"
+      - "${POSTGRES_PORT_HOST}:${POSTGRES_PORT_CONTAINER}"
     environment:
-      POSTGRES_DB: OrderDb
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: OrderDb 
+      POSTGRES_USER: ${POSTGRES_USER} 
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
+    
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
@@ -17,11 +18,11 @@ services:
       retries: 5
 
   rabbitmq:
-    image: rabbitmq:3-management
+    image: rabbitmq:4.1.6-management
     container_name: order-rabbitmq
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - "${RABBITMQ_PORT_HOST}:${RABBITMQ_PORT_CONTAINER}"
+      - "${RABBITMQ_MANAGEMENT_PORT_HOST}:${RABBITMQ_MANAGEMENT_PORT_CONTAINER}"
     environment:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
@@ -37,9 +38,9 @@ services:
       dockerfile: OrderApi/Dockerfile
     container_name: order-api
     ports:
-      - "8080:8080"
+      - "${ORDER_API_PORT_HOST}:${ORDER_API_PORT_CONTAINER}"
     environment:
-      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=OrderDb;Username=postgres;Password=postgres
+      - ConnectionStrings__OrderDb=Host=postgres;Port=${POSTGRES_PORT_CONTAINER};Database=OrderDb;Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
       - RabbitMQ__HostName=rabbitmq
       - RabbitMQ__UserName=${RABBITMQ_USER}
       - RabbitMQ__Password=${RABBITMQ_PASSWORD}

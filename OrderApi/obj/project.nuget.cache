@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NS2NnFS6ncZ22GKe9Fhv16Kub6j1ND4nkc9ammaT8bzQZ0zr9hD4pG7NcaJTDHRTv7DEGy/7nVyBkNP+LQxyjA==",
+  "dgSpecHash": "2mfcY4LSbFGNmfrrDx/r5sdzYFr6FTbDATcC+ZLTGyod1tzISsECVwQ0T6UKPt0xjfmFlWmuFs5p0kDCYCYcLw==",
   "success": true,
-  "projectFilePath": "/home/tuna/order-manager/OrderApi/OrderApi.csproj",
+  "projectFilePath": "/home/tuna/projects/order-manager/OrderApi/OrderApi.csproj",
   "expectedPackageFiles": [
     "/home/tuna/.nuget/packages/dotnetenv/3.1.1/dotnetenv.3.1.1.nupkg.sha512",
     "/home/tuna/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

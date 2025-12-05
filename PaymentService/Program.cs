@@ -4,18 +4,8 @@ using PaymentService;
 var builder = Host.CreateApplicationBuilder(args);
 
 // RabbitMQ
-// Load .env file
-var root = Directory.GetCurrentDirectory();
-var dotenv = Path.Combine(root, "..", ".env");
-DotNetEnv.Env.Load(dotenv);
-
-// RabbitMQ
-var rabbitConfig = new RabbitMQConfiguration
-{
-    HostName = Environment.GetEnvironmentVariable("RABBITMQ_HOST") ?? "localhost",
-    UserName = Environment.GetEnvironmentVariable("RABBITMQ_USER") ?? "guest",
-    Password = Environment.GetEnvironmentVariable("RABBITMQ_PASSWORD") ?? "guest"
-};
+var rabbitConfig = new RabbitMQConfiguration();
+builder.Configuration.GetSection("RabbitMQ").Bind(rabbitConfig);
 builder.Services.AddSingleton(rabbitConfig);
 builder.Services.AddSingleton<IMessageProducer, RabbitMQProducer>();
 

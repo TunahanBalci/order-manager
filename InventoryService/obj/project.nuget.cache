@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oLzsiYQZ0nd0Ptp8qvE5oaq+xcDdJuc7/yCOz2iVTeC8A7kG9uyMq/IrtcqndZIyMvqEwh541owu6l+NkK+tqw==",
+  "dgSpecHash": "jipcniJo+TnJufcbPVCsWxnGHiGe2UuwcBHDEfj6xhx1ewMf4qvqZgzdFnPckGbiOtireAtRG+teOVlyC6GUsA==",
   "success": true,
-  "projectFilePath": "/home/tuna/order-manager/InventoryService/InventoryService.csproj",
+  "projectFilePath": "/home/tuna/projects/order-manager/InventoryService/InventoryService.csproj",
   "expectedPackageFiles": [
     "/home/tuna/.nuget/packages/dotnetenv/3.1.1/dotnetenv.3.1.1.nupkg.sha512",
     "/home/tuna/.nuget/packages/microsoft.aspnetcore.openapi/8.0.21/microsoft.aspnetcore.openapi.8.0.21.nupkg.sha512",
